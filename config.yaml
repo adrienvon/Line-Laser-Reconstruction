@@ -1,0 +1,48 @@
+# -------------------------
+# General Settings
+# -------------------------
+# 存放所有输入/输出数据的根目录
+data_root: 'data'
+# 标定结果的输出目录
+output_dir: 'output'
+
+# -------------------------
+# Camera Calibration Settings
+# -------------------------
+camera_calibration:
+  # 相机标定图像文件夹
+  image_dir: 'camera_calib_images'
+  # 标定结果文件名
+  output_file: 'camera_params.npz'
+  # 棋盘格内部角点数 [列, 行]
+  board_pattern: [4, 7]
+  # 棋盘格方块尺寸 (mm)
+  square_size: 10.0
+
+# -------------------------
+# Laser Plane Calibration Settings
+# -------------------------
+laser_calibration:
+  # 激光标定图像文件夹
+  image_dir: 'laser_calib_images'
+  # 标定结果文件名
+  output_file: 'laser_plane_params.npz'
+
+# -------------------------
+# Reconstruction Settings
+# -------------------------
+reconstruction:
+  # 用于重建的测试图像文件夹
+  test_image_dir: 'test_images'
+  # 重建结果输出文件名
+  output_file: 'reconstructed_profile.csv'
+  # 激光线提取的亮度阈值
+  # 注意：这个值应该在标定和重建中保持一致
+  laser_extraction_threshold: 50
+
+# -------------------------
+# Visualization Settings
+# -------------------------
+visualization:
+  # 要可视化的点云文件
+  point_cloud_file: 'reconstructed_profile.csv'
