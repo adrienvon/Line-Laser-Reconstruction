@@ -78,8 +78,8 @@ def get_3d_points_from_image(image, mtx, dist, plane_params):
 
 def main():
     # --- 1. 定义标定文件的路径 ---
-    CAMERA_CALIB_FILE = "camera_calibration.npz"
-    LASER_CALIB_FILE = "laser_plane_calibration.npz"
+    CAMERA_CALIB_FILE = "./original/camera_calibration.npz"
+    LASER_CALIB_FILE = "./original/laser_plane_calibration.npz"
 
     # --- 2. 加载标定参数 ---
     print("正在加载标定参数...")
@@ -101,7 +101,7 @@ def main():
 
     # --- 3. 指定要重建的图像 ---
     # 请将 'test_object.png' 替换为您自己的图像文件名
-    test_image_path = 'mvs/st/Image_15189.bmp' 
+    test_image_path = 'original/st/Image_25872.bmp' 
     
     if not os.path.exists(test_image_path):
         print(f"\n错误: 找不到测试图像 '{test_image_path}'。")
@@ -121,7 +121,7 @@ def main():
         print(f"成功重建 {len(object_profile_3d)} 个三维点。")
         
         # --- 5. 保存并显示结果 ---
-        output_file = "reconstructed_profile.csv"
+        output_file = "test1.csv"
         # 保存为CSV格式，X,Y,Z三列，单位为毫米
         np.savetxt(output_file, object_profile_3d, delimiter=",", header="X(mm),Y(mm),Z(mm)", comments="")
         print(f"三维轮廓数据已保存到 '{output_file}'")

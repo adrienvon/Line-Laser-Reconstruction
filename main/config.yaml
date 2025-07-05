@@ -2,7 +2,7 @@
 # General Settings
 # -------------------------
 # 存放所有输入/输出数据的根目录
-data_root: 'data'
+data_root: 'mvs'
 # 标定结果的输出目录
 output_dir: 'output'
 
@@ -11,7 +11,7 @@ output_dir: 'output'
 # -------------------------
 camera_calibration:
   # 相机标定图像文件夹
-  image_dir: 'camera_calib_images'
+  image_dir: './camera'
   # 标定结果文件名
   output_file: 'camera_params.npz'
   # 棋盘格内部角点数 [列, 行]
@@ -24,7 +24,7 @@ camera_calibration:
 # -------------------------
 laser_calibration:
   # 激光标定图像文件夹
-  image_dir: 'laser_calib_images'
+  image_dir: './line'
   # 标定结果文件名
   output_file: 'laser_plane_params.npz'
 
@@ -33,7 +33,7 @@ laser_calibration:
 # -------------------------
 reconstruction:
   # 用于重建的测试图像文件夹
-  test_image_dir: 'test_images'
+  test_image_dir: './st'
   # 重建结果输出文件名
   output_file: 'reconstructed_profile.csv'
   # 激光线提取的亮度阈值

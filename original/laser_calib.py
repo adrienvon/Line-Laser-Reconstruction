@@ -220,8 +220,8 @@ def main():
     # 棋盘格方块的实际大小 (单位: mm)
     SQUARE_SIZE = 10.0
     # 图像文件夹路径
-    CAMERA_CALIB_DIR = 'mvs/camera'
-    LASER_CALIB_DIR = 'mvs/line'
+    CAMERA_CALIB_DIR = 'cal02/mvs/line'
+    LASER_CALIB_DIR = 'cal02/mvs/line'
     camera_calib_file = CAMERA_CALIB_DIR
     # --- 步骤1: 相机标定 ---
     mtx, dist, camera_calib_file = calibrate_camera(CAMERA_CALIB_DIR, BOARD_PATTERN, SQUARE_SIZE)

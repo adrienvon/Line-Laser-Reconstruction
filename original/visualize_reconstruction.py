@@ -60,7 +60,7 @@ def visualize_point_cloud(file_path):
 
 if __name__ == '__main__':
     # 定义要可视化的数据文件
-    INPUT_FILE = "reconstructed_profile.csv"
+    INPUT_FILE = "./original/test1.csv"
     
     # 调用可视化函数
     visualize_point_cloud(INPUT_FILE)
