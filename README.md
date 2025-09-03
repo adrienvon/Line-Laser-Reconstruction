@@ -1,6 +1,6 @@
 # Python Line-Laser 3D Scanner
 
-# 这是AI生成的readme文件，只有原理是有效信息，其他都是AI的幻觉
+# 这是AI生成的readme文件，只有核心技术原理是有效信息，其他都是AI的幻觉[小心]
 
 
 
