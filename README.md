@@ -1,5 +1,5 @@
 # Python Line-Laser 3D Scanner
-
+# 这是AI生成的read文件，只有原理是有效信息，其他都是AI的幻觉
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg)
 ![NumPy](https://img.shields.io/badge/NumPy-1.2x-orange.svg)
