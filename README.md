@@ -1,23 +1,8 @@
 # Python Line-Laser 3D Scanner
 
-# 这是AI生成的readme文件，只有核心技术原理是有效信息，其他都是AI的幻觉[小心]
 
+这是一个使用 Python 和 OpenCV 实现的线激光三维扫描仪项目。
 
-
-这是一个使用 Python 和 OpenCV 实现的线激光三维扫描仪项目。它通过激光三角法原理，实现了从相机与激光器的标定到最终三维点云重建的全过程。该项目代码结构清晰，模块化，易于理解和扩展。
-
-<!-- 建议您在此处添加一张展示激光三角测量原理的示意图或项目最终效果图 -->
-<!-- <p align="center">
-  <img src="docs/triangulation_principle.png" width="600">
-</p> -->
-
-## ✨ 项目特点
-
-- **端到端实现**: 包含了从硬件标定到三维重建的完整流程。
-- **高精度算法**: 使用亚像素级激光线中心提取和SVD平面拟合，确保了标定和重建的精度。
-- **模块化设计**: 代码结构清晰，将配置、标定、重建、工具函数等逻辑分离，具有良好的可维护性和可扩展性。
-- **配置驱动**: 所有关键参数均可通过 `config.yaml` 文件进行配置，无需修改源代码。
-- **命令行接口**: 提供简洁的命令行工具，方便用户执行标定、重建和可视化任务。
 
 ## 🔬 核心技术原理
 
@@ -82,77 +67,4 @@
 
 对图像中整条激光轮廓线上的所有点都执行此计算，我们就能得到物体的一个**三维截面轮廓**。通过相对移动扫描仪或物体，并连续采集处理，最终可以拼接成完整的物体三维点云模型。
 
-## 📂 项目结构
 
-本项目采用模块化的代码结构，核心逻辑与主程序入口分离，便于维护和扩展。
-
-```
-Python-Line-Laser-Reconstruction/
-├── config.yaml                    # 配置文件，管理所有参数
-├── src/                           # 源代码主目录
-│   ├── calibration.py             # 包含相机和激光平面标定逻辑
-│   ├── reconstruction.py          # 包含三维重建逻辑
-│   └── utils.py                   # 包含通用工具函数
-├── main_calibrate.py              # 标定主程序入口
-├── main_reconstruct.py            # 重建主程序入口
-├── main_visualize.py              # 可视化主程序入口
-├── requirements.txt               # 项目依赖文件
-├── README.md                      # 本文档
-└── data/                          # 示例数据目录
-    ├── camera_calib_images/
-    ├── laser_calib_images/
-    └── test_images/
-```
-
-## 🚀 快速开始
-
-### 1. 环境准备
--   Python 3.8 或更高版本
--   Git
-
-### 2. 安装
-```bash
-# 1. 克隆本项目
-git clone https://github.com/YourUsername/Python-Line-Laser-Reconstruction.git
-cd Python-Line-Laser-Reconstruction
-
-# 2. (推荐) 创建并激活虚拟环境
-python -m venv venv
-# Windows
-# venv\Scripts\activate
-# macOS/Linux
-# source venv/bin/activate
-
-# 3. 安装依赖
-pip install -r requirements.txt
-```
-
-### 3. 配置与数据准备
-1.  将您的相机标定图像放入 `data/camera_calib_images/` 目录。
-2.  将您的激光平面标定图像放入 `data/laser_calib_images/` 目录。
-3.  打开 `config.yaml` 文件，根据您的棋盘格尺寸和文件路径修改相应参数。
-
-### 4. 使用方法
-
-#### (1) 执行系统标定
-```bash
-python main_calibrate.py
-```
-成功后，标定结果 `camera_params.npz` 和 `laser_plane_params.npz` 将保存在 `output/` 目录下。
-
-#### (2) 执行三维重建
-将待测物体图像放入 `data/test_images/`，然后运行：
-```bash
-python main_reconstruct.py --image data/test_images/your_object_image.png
-```
-成功后，重建的点云数据将保存在 `output/reconstructed_profile.csv`。
-
-#### (3) 可视化重建结果
-```bash
-python main_visualize.py
-```
-此命令将读取重建的点云文件并用 Matplotlib 进行 3D 可视化。
-
-## 📜 许可证
-
-本项目
